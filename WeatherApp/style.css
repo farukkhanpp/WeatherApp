@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.card {
+    width: 100%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+/* Search Section */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* ✅ Wrap for small screens */
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 20px;
+    height: 55px;
+    border-radius: 30px;
+    flex: 1;
+    min-width: 180px;
+    margin-right: 12px;
+    font-size: 1rem;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search button img {
+    width: 16px;
+}
+
+/* Weather Section */
+.weather-icon {
+    width: 150px;
+    margin-top: 25px;
+    max-width: 40vw; /* ✅ scale on small screens */
+}
+
+.weather h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: -5px;
+}
+
+/* Details Section */
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* ✅ stack on small screens */
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin: 10px 0;
+    /* flex: 1 1 45%;  */
+}
+
+.col img {
+    width: 35px;
+    margin-right: 8px;
+}
+
+.humidity, .wind {
+    font-size: 1.5rem;
+}
+
+/* Error message */
+.error {
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 10px;
+    display: none;
+}
+
+/* ✅ RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+    .card {
+        padding: 30px 20px;
+    }
+    .weather h1 {
+        font-size: 2.8rem;
+    }
+    .weather h2 {
+        font-size: 1.5rem;
+    }
+    .humidity, .wind {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search input {
+        margin-right: 0;
+        width: 100%;
+    }
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+    .weather-icon {
+        width: 120px;
+    }
+    .weather h1 {
+        font-size: 2.2rem;
+    }
+    .weather h2 {
+        font-size: 1.3rem;
+    }
+    .details {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .col {
+        justify-content: center;
+    }
+}
+
+
+.weather {
+    opacity: 0;
+    transform: translateY(-30px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1s ease, transform 1s ease, max-height 1.2s ease; 
+}
+
+.weather.show {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 600px; /* adjust if content is bigger */
+}
+
+.Copy{
+    font-size: 10px;
+    margin-top: 30px;
+    font-family:fantasy;
+}
